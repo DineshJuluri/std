@@ -1,0 +1,84 @@
+{% load static %}
+<html>
+<head>
+<title>Student Performance Predictor & Tracker</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter material name");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t2.value.length==0)
+	{
+	alert("Please Enter Description");
+	formObj.t2.focus();
+	return false;
+	}
+	if(formObj.t3.value.length==0)
+	{
+	alert("Please Upload Material File");
+	formObj.t3.focus();
+	return false;
+	}
+	
+	return true;
+	}
+	</script>
+	<script language="javascript" type="text/javascript" src="{% static 'datetimepicker.js' %}">
+</script>
+</head>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1><span>Student Performance Predictor & Tracker</span><small></small></h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content_bg">
+        <div class="menu_nav">
+       <ul>      
+     <li><a href="{% url 'AddAttendance' %}"><font size="3" color="black">Add Attendance</a></li>
+	 <li><a href="{% url 'CreateAssignments' %}"><font size="3" color="black">Create Assignments</a></li>
+	 <li><a href="{% url 'UploadMaterial' %}"><font size="3" color="black">Upload Material</a></li>
+	  <li><a href="{% url 'AddMarks' %}"><font size="3" color="black">Add Marks</a></li>
+	  <li><a href="{% url 'Messaging' %}"><font size="3" color="black">Messaging</a></li>
+	  <li><a href="{% url 'ViewProgressReport' %}"><font size="3" color="black">View Progress Report</a></li>
+	  <li><a href="{% url 'ViewStudentMessages' %}"><font size="3" color="black">View Student Messages</a></li>
+	 <li><a href="{% url 'index' %}"><font size="3" color="black">Logout</a></li>
+   </ul>         
+        </div>
+        <div class="hbg"><img src="{% static 'images/header_images.jpg' %}" width="915" height="286" alt="" /></div>
+      				<center>
+<form name="f1" method="post" action={% url 'UploadMaterialAction' %} enctype="multipart/form-data" onsubmit="return validate(this);">
+{% csrf_token %}<br/>
+   <h2><b>Upload Material Screen</b></h2>
+   
+	<font size="" color="red"><center>{{ data }}</center></font>
+						
+						<table align="center" width="30%" >
+			 <tr><td><font size='' color="black"><b>Material&nbsp;Name</b></td>
+			 <td><input type="text" name="t1" style="font-family: Comic Sans MS" size="35"></td></tr>
+
+			 <tr><td><font size='' color="black"><b>Description</b></td>
+			<td><input name="t2" type="Text" size="70"></td></td></tr>	  
+
+		    
+		   <tr><td><font size='' color="black"><b>Upload&nbsp;Material</b></td><td><input type="file" name="t3" style="font-family: Comic Sans MS" size="20"/></td></tr>
+
+
+			<tr><td></td><td><input type="submit" value="Submit"></td>
+			</table>
+				</div>	
+					
+				</div>
+				
+					
+	</body>
+</html>

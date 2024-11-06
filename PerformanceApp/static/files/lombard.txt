@@ -1,0 +1,25 @@
+Blockchain Based Certificate Validation
+1. Student / User	Registration 	
+Login 	
+HomePage(after login) with session should display student rollno & name 	
+Upload & Save with Digital Signature generate HashCode and store it in the blockchain 
+
+Verify Certificates 	
+View certificates (Should display the list of certificates with names & images) preview is required to view the ceritificate 		
+Only Valid Ceriticates must be visible & accessible 
+Verification Success / Failed should display in a new Page, 
+Add back button to navigate to the User Home Page 						(redirection)
+Edit certificate ( update / delete) 	
+
+2. Admin 	Login 	
+Home Page 	View All Students Certificates : 		
+ListView 		
+Click on Rollno can access the certificates which are verified succesfully
+
+
+
+
+
+4128i/HSRN/137527116/03/000
+
+4128i/HPA/137527219/02/000 pending
